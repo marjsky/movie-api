@@ -7,7 +7,7 @@ const app = express();
 
 const  accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), {flags: 'a'}) 
 
-app.use(morgan('combined', {stream: accessLogStream}))
+app.use(morgan('combined', {stream: accessLogStream}));
 
 app.use(express.static('public')); // route request for file corresponding to folder on server
 
@@ -68,6 +68,10 @@ app.get('/documentation.html', (req, res) => {
     res.sendFile('public/documentation.html', { root: __dirname});
 });
 
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+});
 
 app.listen(8080, () => {
     console.log('Server started on port 8080; press Ctrl-C to terminate...');
