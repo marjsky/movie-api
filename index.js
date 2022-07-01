@@ -64,10 +64,6 @@ app.get('/', (req, res) => {
     res.send(responseText);
 });
 
-app.get('/documentation.html', (req, res) => {
-    res.sendFile('public/documentation.html', { root: __dirname});
-});
-
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something broke!');
