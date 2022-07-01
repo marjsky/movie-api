@@ -3,6 +3,8 @@ const express = require('express'),
 
 const app = express();
 
+app.use(express.static('public')); // route request for file corresponding to folder on server
+
 let topTenMovies = [
     {
         title: 'Hancock',
@@ -53,4 +55,8 @@ app.get('/movie', (req, res) => {
 app.get('/', (req, res) => {
     let responseText = 'Amazing, this is working!';
     res.send(responseText);
+});
+
+app.get('/documentation.html', (req, res) => {
+    res.sendFile('public/documentation.html', { root: __dirname});
 });
