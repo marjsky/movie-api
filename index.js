@@ -1,9 +1,16 @@
 const express = require('express'),
-    morgan = require('morgan');
+    morgan = require('morgan'),
+    fs = require('fs'),
+    path = require('path');
 
 const app = express();
 
+const  accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'), {flags: 'a'}) 
+
+app.use(morgan('combined', {stream: accessLogStream}))
+
 app.use(express.static('public')); // route request for file corresponding to folder on server
+
 
 let topTenMovies = [
     {
@@ -59,4 +66,9 @@ app.get('/', (req, res) => {
 
 app.get('/documentation.html', (req, res) => {
     res.sendFile('public/documentation.html', { root: __dirname});
+});
+
+
+app.listen(8080, () => {
+    console.log('Server started on port 8080; press Ctrl-C to terminate...');
 });
