@@ -49,3 +49,8 @@ let topTenMovies = [
 app.get('/movie', (req, res) => {
     res.json(topTenMovies);
 });
+
+app.get('/', (req, res) => {
+    let responseText = 'Amazing, this is working!';
+    res.send(responseText);
+});
