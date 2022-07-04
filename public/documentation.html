@@ -15,6 +15,134 @@
         
         <p>Below we introduce some key concepts, further explore endpoints, and then present example use cases that map generally to a specific endpoint. Hopefully, this information will help you more efficiently integratee all endpoints, or help you decide which endpoint best fits your mission.</p>
 
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr class="table-info">
+                    <th>Request</th>
+                    <th>URL Endpoints</th>
+                    <th>HTTP Methods</th>
+                    <th>Request Body</th>
+                    <th>Response Body</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Get a list of movies.</td>
+                    <td>/movies</td>
+                    <td>GET</td>
+                    <td>None</td>
+                    <td>A JSON object holding data about all the movies.</td>
+                </tr>
+                <tr>
+                    <td>Get data about a single movie by title.</td>
+                    <td>/movies/[title]</td>
+                    <td>GET</td>
+                    <td>None</td>
+                    <td>A JSON object holding data about a single title, containing an ID, description, genre, director, and image URL.</td>
+                </tr>
+                <tr>
+                    <td>Get data about a genre by name title.</td>
+                    <td>/movies/[genre]/[genreName]</td>
+                    <td>GET</td>
+                    <td>None</td>
+                    <td>A JSON object holding data about a single genre, containing name and description. Example: 
+                        <code>
+                            <br> {
+                            <br> Genre: {
+                            <br> &emsp; name: string,
+                            <br> &emsp; description: string
+                            <br> &emsp; }
+                            <br> }
+                        </code>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Get data about a director by name.</td>
+                    <td>/movies/[director]/[directorName]</td>
+                    <td>GET</td>
+                    <td>None</td>
+                    <td>A JSON object holding data about a single director, containing name, bio, birth year, and death year. Example: 
+                        <code>
+                            <br> {
+                            <br> Director: {
+                            <br> &emsp; name: string,
+                            <br> &emsp; bio: string,
+                            <br> &emsp; birth year: number,
+                            <br> &emsp; death year: number
+                            <br> &emsp; }
+                            <br> }
+                        </code>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Add a user.</td>
+                    <td>/users</td>
+                    <td>PUT</td>
+                    <td>A JSON object holding data to update with new user name. Example
+                        <code>
+                            <br> {
+                            <br> name: string,
+                            <br> favoriteMovies: string
+                            <br> }
+                        </code>
+                    </td>
+                    <td>A JSON object holding the updated user name and given id. Example:
+                        <code>
+                            <br> {
+                            <br> id: number,
+                            <br> name: string,
+                            <br> favoriteMovies: string
+                            <br> }
+                        </code>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Update username.</td>
+                    <td>/users/[id]</td>
+                    <td>PUT</td>
+                    <td>None</td>
+                    <td>A text message indicating the username that was updated.</td>
+                </tr>
+                <tr>
+                    <td>Add a movie.</td>
+                    <td>/users/[id]/[movieTitle]</td>
+                    <td>POST</td>
+                    <td>A JSON object holding data, new favorite movie title. Example:
+                        <code>
+                            <br> {
+                            <br> name: string,
+                            <br> favoriteMovies: string
+                            <br> }
+                        </code>
+                    </td>
+                    <td> Send text message movie title has been added to user id's array. As JSON object shows:
+                        <code>
+                            <br> {
+                            <br> id: number,
+                            <br> name: string,
+                            <br> favoriteMovies: string
+                            <br> }
+                        </code>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Delete a favorite movie title from user's list.</td>
+                    <td>/users/[id]/[movieTitle]</td>
+                    <td>DELETE</td>
+                    <td>None</td>
+                    <td> A text message indicating whether the favorite movie title was successfully removed.
+                    </td>
+                </tr>
+                <tr>
+                    <td>Deregister user.</td>
+                    <td>/users/[id]/</td>
+                    <td>DELETE</td>
+                    <td>None</td>
+                    <td> A text message indicating user has been successfully removed.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
     <strong>
