@@ -31,7 +31,7 @@ const movies = [
       },
       director: {
         name: 'Gavin O\'Connor',
-        bio: 'Peter Berg is an American actor, director, writer, and producer. His first role was in the Adam Rifkin road movie Never on Tuesday (1988). He went on to stGavin O\'Connor was born on December 24, 1963 in Huntington, Long Island, New York, USA. He is a producer and director, known for The Accountant (2016), Pride and Glory (2008) and Warrior (2011). He has been married to Brooke Burns since June 22, 2013. They have one child. He was previously married to Angela Shelton.ar in the World War 2 film A Midnight Clear (1992). Roles in Fire in the Sky (1993) and Cop Land (1997) followed, and the Tom Cruise films Collateral (2004) and Lions for Lambs (2007).',
+        bio: 'Gavin O Connor was born on December 24, 1963 in Huntington, Long Island, New York, USA. He is a producer and director, known for The Accountant (2016), Pride and Glory (2008) and Warrior (2011). He has been married to Brooke Burns since June 22, 2013. They have one child. He was previously married to Angela Shelton.',
         birth: 'December 24, 1963',
       },
       imageURL: 'https://www.imdb.com/title/tt8544498/mediaviewer/rm2478489345/?ref_=tt_ov_i',
