@@ -82,6 +82,81 @@ const movies = [
       imageURL: 'https://www.imdb.com/title/tt11671006/mediaviewer/rm53481729/?ref_=tt_ov_i',
       featured: true,
     },
+    {
+      Title: "Friday Night Lights",
+      Description: "Based on H.G. Bissingers book, which profiled the economically depressed town of Odessa, Texas and their heroic high school football team, The Permian High Panthers.",
+      Genre: {
+        Name: "Drama",
+        Description: "A straight arrow coach leads his team to the 1988 Texas state semifinals in the west Texas city of Odessa, where high school football is king. Expectations of classmates, coaches, family, and community members exact a toll on the athletes central to the story. Economic and racial undertones pervade this adaptation of H.G. Bissinger's book by the same name."
+        },
+      Director: {
+        Name:"Peter Berg",
+        Bio: "Peter Berg is an American actor, director, writer, and producer. His first role was in the Adam Rifkin road movie Never on Tuesday (1988). He went on to star in the World War 2 film A Midnight Clear (1992). Roles in Fire in the Sky (1993) and Cop Land (1997) followed, and the Tom Cruise films Collateral (2004) and Lions for Lambs (2007).",
+        Birth: "3/11/1964"
+        },
+      ImagePath: "https://www.imdb.com/title/tt0390022/mediaviewer/rm3683556608/?ref_=tt_ov_i",
+      Featured: true
+    },
+    {
+      Title: "Moon Knight",
+      Description: "Steven Grant discovers he been granted the powers of an Egyptian moon god. But he soon finds out that these newfound powers can be both a blessing and a curse to his troubled life.",
+      Genre: {
+        Name: "Adventure",
+        Description: "The series follows Steven Grant, a mild- mannered gift-shop employee, who becomes plagued with blackouts and memories of another life. Steven discovers he has dissociative identity disorder and shares a body with mercenary Marc Spector. As Steven/Marc's enemies converge upon them, they must navigate their complex identities while thrust into a deadly mystery among the powerful gods of Egypt."
+        },
+      Director: {
+        Name:"Doug Moench",
+        Bio: "Doug Moench was born on February 23, 1948 in Chicago, Illinois, USA. He is a writer and actor, known for Union Jack (2019), Batman Ninja (2018) and Young Justice (2010). He is married to Deborah. They have one child.",
+        Birth: "2/23/1948"
+        },
+      ImagePath: "https://www.imdb.com/title/tt10234724/mediaviewer/rm1390285313/?ref_=tt_ov_i",
+      Featured: true
+    },
+    {
+      Title: "Irresistible",
+      Description: "A Democratic strategist helps a retired veteran run for mayor in a small, conservative Midwest town.",
+      Genre: {
+        Name: "Comedy",
+        Description: "Partially inspired by the 2017 special election for Georgia's 6th congressional district, where the Democratic and Republican parties and groups supporting them spent more than $55 million combined - the most expensive House Congressional election in U.S. history."
+        },
+      Director: {
+        Name:"Jon Stewart",
+        Bio: "Jon Stewart was born Jonathan Stuart Leibowitz in New York City, New York, to Marian (Laskin), a teacher, and Donald Leibowitz, a physics professor. His family is Ashkenazi Jewish (from Austria, Ukraine, Poland, and Belarus). Stewart moved to Lawrenceville, New Jersey during his childhood. He graduated from the College Of William And Mary in Williamsburg, Virginia, in 1984. He made his breakthrough on The Larry Sanders Show (1992), where he had a role playing himself, the oft-timed \"Guest Host\" of \"The Larry Sanders Show\". He became as much a part of the show's fabric as some of the regular performers.",
+        Birth: "11/28/1962"
+        },
+      ImagePath: "https://www.imdb.com/title/tt9076562/mediaviewer/rm3713444353/?ref_=tt_ov_i",
+      Featured: true
+    },
+    {
+      Title: "The Pursuit of Happyness",
+      Description: "A struggling salesman takes custody of his son as he is poised to begin a life-changing professional career.",
+      Genre: {
+        Name: "Biography",
+        Description: "Based on a true story about a man named Christopher Gardner. Gardner has invested heavily in a device known as a \"bone density scanner\". He feels like he has it made selling these devices. However, they do not sell well as they are marginally better than x-ray at a much higher price. As Gardner works to make ends meet, his wife leaves him and he loses his apartment. Forced to live out in the streets with his son, Gardner continues to sell bone density scanners while concurrently taking on an unpaid internship as a stockbroker, with slim chances for advancement to a paid position. Before he can receive pay, he needs to outshine the competition through 6 months of training, and to sell his devices to stay afloat."
+        },
+      Director: {
+        Name:"Gabriele Muccino",
+        Bio: "Gabriele Muccino was born on May 20, 1967 in Rome, Lazio, Italy. He is a director and writer, known for Seven Pounds (2008), The Pursuit of Happyness (2006) and The Last Kiss (2001). He has been married to Angelica Russo since December 22, 2012. They have one child. He was previously married to Elena Majoni.",
+        Birth: "5/20/1967"
+        },
+      ImagePath: "https://www.imdb.com/title/tt0454921/mediaviewer/rm2553318400/?ref_=tt_ov_i",
+      Featured: true
+    },
+    {
+      Title: "Just Mercy",
+      Description: "World-renowned civil rights defense attorney Bryan Stevenson works to free a wrongly condemned death row prisoner.",
+      Genre: {
+        Name: "Crime",
+        Description: "After graduating from Harvard, Bryan Stevenson heads to Alabama to defend those wrongly condemned or those not afforded proper representation. One of his first cases is that of Walter McMillian, who is sentenced to die in 1987 for the murder of an 18-year-old girl, despite evidence proving his innocence. In the years that follow, Stevenson encounters racism and legal and political maneuverings as he tirelessly fights for McMillian's life."
+        },
+      Director: {
+        Name:"Destin Daniel Cretton",
+        Bio: "Destin Daniel Cretton is an American filmmaker, writer and producer from Haiku, Hawaii. He is known for directing The Glass Castle, I Am Not a Hipster, Short Term 12, Just Mercy and Shang-Chi and the Legend of the Ten Rings. He is the second Asian-American filmmaker to direct a Marvel film following Ang Lee's Hulk.",
+        Birth: "11/23/1978"
+        },
+      ImagePath: "https://www.imdb.com/title/tt4916630/mediaviewer/rm638288385/?ref_=tt_ov_i",
+      Featured: true
+    }
   ];
   
   app.get('/movies', (req, res) => {
