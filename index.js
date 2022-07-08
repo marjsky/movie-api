@@ -20,7 +20,7 @@ const movies = [
         birth: 'March 22, 1964',
       },
       imageURL: 'https://www.imdb.com/title/tt0448157/mediaviewer/rm871864576/?ref_=tt_ov_i',
-      featured: false,
+      featured: true,
     },
     {
       title: 'The Way Back',
@@ -35,7 +35,7 @@ const movies = [
         birth: 'December 24, 1963',
       },
       imageURL: 'https://www.imdb.com/title/tt8544498/mediaviewer/rm2478489345/?ref_=tt_ov_i',
-      featured: false,
+      featured: true,
     },
     {
       title: 'Gamer',
@@ -50,7 +50,7 @@ const movies = [
         birth: 'May 11, 1973',
       },
       imageURL: 'https://www.imdb.com/title/tt1034032/mediaviewer/rm1878165504/?ref_=tt_ov_i',
-      featured: false,
+      featured: true,
     },
     {
       title: 'Divergent',
@@ -65,7 +65,7 @@ const movies = [
         birth: 'June 22, 1963',
       },
       imageURL: 'https://www.imdb.com/title/tt1840309/mediaviewer/rm2855260672/?ref_=tt_ov_i',
-      featured: false,
+      featured: true,
     },
     {
       title: 'The Man from Toronto',
@@ -80,7 +80,7 @@ const movies = [
         birth: 'March 12, 1978',
       },
       imageURL: 'https://www.imdb.com/title/tt11671006/mediaviewer/rm53481729/?ref_=tt_ov_i',
-      featured: false,
+      featured: true,
     },
   ];
   
