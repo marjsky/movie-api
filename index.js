@@ -1,45 +1,14 @@
-const express = require('express');
+const express = require('express'),
+  morgan = require('morgan'),
+  bodyParser = require('body-parser'),
+  uuid = require('uuid'),
+  fs = require('fs'),
+  path = require('path');
 
 const app = express();
 
-const bodyParser = require('body-parser');
-
 app.use(bodyParser.json());
 
-const users = [
-  {
-  "_id" : ObjectId("62c78e26afc834b7c34291e1"),
-  "Username" : "Daniel Jordan",
-  "Password" : "1234",
-  "Email" : "daniel.jordan@gmail.com",
-  "Birthday" : ISODate("1985-01-05T00:00:00Z"),
-  "FavoriteMovies" : [ ]
-},
-{
-  "_id" : ObjectId("62c79b0cafc834b7c34291e2"),
-  "Username" : "qwe098",
-  "Password" : "98765",
-  "Email" : "qwe@gmail.com",
-  "Birthday" : ISODate("1999-04-01T00:00:00Z"),
-  "FavoriteMovies" : [ ]
-},
-{
-  "_id" : ObjectId("62c79da9afc834b7c34291e5"),
-  "Username" : "abc123",
-  "Password" : "12345",
-  "Email" : "123@gmail.com",
-  "Birthday" : ISODate("1980-06-22T00:00:00Z"),
-  "FavoriteMovies" : [ ]
-},
-{
-  "_id" : ObjectId("62c7a27aafc834b7c34291e6"),
-  "Username" : "mark23",
-  "Password" : "9021",
-  "Email" : "mark23@gmail.com",
-  "Birthday" : ISODate("2002-04-22T00:00:00Z"),
-  "FavoriteMovies" : [ ]
-}
-]
 
 const movies = [
     {
