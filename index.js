@@ -3,7 +3,9 @@ const express = require('express'),
   bodyParser = require('body-parser'),
   uuid = require('uuid'),
   fs = require('fs'),
-  path = require('path');
+  path = require('path'),
+  mongoose = require('mongoose'),
+  Models = require('./models.js');
 
 const app = express();
 
