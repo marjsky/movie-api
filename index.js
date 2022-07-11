@@ -165,6 +165,23 @@ app.put("/users/:Username", (req, res) => {
   );
 });
 
+//Allow users to add a movie to their list of favorites #7
+app.post("/users/:Username/movies/:MovieID", (req, res) => {
+  Users.findOneAndUpdate(
+      {Username: req.params.Username},
+      {$push: { FavoriteMovies: req.params.MovieID }},
+      {new: true}, // This line maks sure that the update document is right
+      (err, updatedUser) => {
+          if (err) {
+              console.error(err);
+              res.status(500).send("Error: " + err);
+          } else {
+              res.json(updatedUser);
+          }
+      }
+  );
+});
+
 app.listen(8080, () => {
   console.log('Server started on port 8080; press Ctrl-C to terminate...');
 });
