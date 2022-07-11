@@ -35,30 +35,47 @@
                 </tr>
                 <tr>
                     <td>Get data about a single movie by title.</td>
-                    <td>/movies/[title]</td>
+                    <td>/movies/:Title</td>
                     <td>GET</td>
                     <td>None</td>
-                    <td>A JSON object holding data about a single title, containing an ID, description, genre, director, and image URL.</td>
+                    <td>A JSON object holding data about a single title, containing an ID, description, genre, director, and image URL.
+                        <code>
+                            <br>{
+                            <br>  "_id": "",
+                            <br>  "Title": "",
+                            <br>  "Description":"",
+                            <br>  "Genre":{                            }
+                            <br> &emsp; "Name": "",
+                            <br> &emsp; "Description": ""
+                            <br>},
+                            <br>  "Director":{
+                            <br> &emsp; "Name": "",
+                            <br> &emsp; "Bio": "",
+                            <br> &emsp; "Birth": ""
+                            <br>},
+                            <br> "Actors": [],
+                            <br> "ImagePath": ""
+                            <br> "Fetured": Boolean
+                            <br>}
+                        </code>
+                    </td>
                 </tr>
                 <tr>
                     <td>Get data about a genre by name title.</td>
-                    <td>/movies/[genre]/[genreName]</td>
+                    <td>/genre]/:Name</td>
                     <td>GET</td>
                     <td>None</td>
-                    <td>A JSON object holding data about a single genre, containing name and description. Example: 
+                    <td>A JSON object holding data about a single genre, containing description. Example: 
                         <code>
                             <br> {
-                            <br> Genre: {
-                            <br> &emsp; name: string,
-                            <br> &emsp; description: string
-                            <br> &emsp; }
+                            <br> description: string
                             <br> }
                         </code>
                     </td>
                 </tr>
                 <tr>
                     <td>Get data about a director by name.</td>
-                    <td>/movies/[director]/[directorName]</td>
+                    <td>/director/:Name</td>
                     <td>GET</td>
                     <td>None</td>
                     <td>A JSON object holding data about a single director, containing name, bio, birth year, and death year. Example: 
@@ -77,11 +94,13 @@
                 <tr>
                     <td>Add a user.</td>
                     <td>/users</td>
-                    <td>PUT</td>
+                    <td>POST</td>
                     <td>A JSON object holding data to update with new user name. Example
                         <code>
                             <br> {
-                            <br> name: string,
+                            <br> Username: string,
+                            <br> Password: string,
+                            <br> Email: strong,
                             <br> favoriteMovies: string
                             <br> }
                         </code>
@@ -90,7 +109,9 @@
                         <code>
                             <br> {
                             <br> id: number,
-                            <br> name: string,
+                            <br> Username: string,
+                            <br> Password: string,
+                            <br> Email: string,
                             <br> favoriteMovies: string
                             <br> }
                         </code>
@@ -98,14 +119,14 @@
                 </tr>
                 <tr>
                     <td>Update username.</td>
-                    <td>/users/[id]</td>
+                    <td>/users/:Username</td>
                     <td>PUT</td>
                     <td>None</td>
                     <td>A text message indicating the username that was updated.</td>
                 </tr>
                 <tr>
                     <td>Add a movie.</td>
-                    <td>/users/[id]/[movieTitle]</td>
+                    <td>/users/:Username/movies/:[id]</td>
                     <td>POST</td>
                     <td>A JSON object holding data, new favorite movie title. Example:
                         <code>
@@ -119,7 +140,9 @@
                         <code>
                             <br> {
                             <br> id: number,
-                            <br> name: string,
+                            <br> Username: string,
+                            <br> Password: string,
+                            <br> Email: string,
                             <br> favoriteMovies: string
                             <br> }
                         </code>
@@ -127,7 +150,7 @@
                 </tr>
                 <tr>
                     <td>Delete a favorite movie title from user's list.</td>
-                    <td>/users/[id]/[movieTitle]</td>
+                    <td>/users/:Username/movies/:[id]</td>
                     <td>DELETE</td>
                     <td>None</td>
                     <td> A text message indicating whether the favorite movie title was successfully removed.
@@ -135,7 +158,7 @@
                 </tr>
                 <tr>
                     <td>Deregister user.</td>
-                    <td>/users/[id]/</td>
+                    <td>/users/:Username</td>
                     <td>DELETE</td>
                     <td>None</td>
                     <td> A text message indicating user has been successfully removed.
