@@ -67,6 +67,17 @@ app.get("/users", function (req, res) {
   });
 });
 
+//GET JSON movie into when looking for specific title #2
+app.get("/movies/:Title", (req, res) =>{
+  Movies.findOne({Title: req.params.Title})
+  .then((movie) => {
+      res.json(movie);
+  })
+  .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+  });
+});
 
 app.listen(8080, () => {
   console.log('Server started on port 8080; press Ctrl-C to terminate...');

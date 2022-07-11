@@ -27,3 +27,4 @@ Timestamp: Tue Jun 28 2022 13:33:53 GMT-0400 (Eastern Daylight Time)
 ::1 - - [01/Jul/2022:16:37:19 +0000] "GET /documentation.html HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
 ::1 - - [10/Jul/2022:22:15:40 +0000] "GET / HTTP/1.1" 200 18 "-" "PostmanRuntime/7.29.0"
 ::1 - - [11/Jul/2022:14:24:05 +0000] "GET /movies HTTP/1.1" 201 13410 "-" "PostmanRuntime/7.29.0"
+::1 - - [11/Jul/2022:14:34:12 +0000] "GET /movies/Hancock HTTP/1.1" 200 1435 "-" "PostmanRuntime/7.29.0"
