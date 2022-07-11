@@ -103,6 +103,43 @@ app.get("/director/:Name", (req, res) => {
   });
 });
 
+//Allow new users to register #5
+/* We'll expect JSON in this format
+{
+  ID: Integer,
+  Username: String,
+  Password: String,
+  Email: String,
+  Birthday: Date
+}*/
+app.post('/users', (req, res) => {
+  Users.findOne({Username: req.body.Username})
+  .then((user) => {
+      if (user) {
+          return res.status(400).send(req.body.Usernmae + 'already exits');
+      } else {
+          Users
+              .create({
+                  Username: req.body.Username,
+                  Password: req.body.Password,
+                  Email: req.body.Email,
+                  Birthday: req.body.Birthday
+              })
+              .then((user) => {
+                  res.status(201).json(user);
+              })
+              .catch((error) => {
+                  console.error(error);
+                  res.status(500).send('Error: ' + error);
+              })
+      }
+  })
+  .catch((error) => {
+      console.error(error);
+      res.status(500).send('Error: ' + error);
+  });
+});
+
 app.listen(8080, () => {
   console.log('Server started on port 8080; press Ctrl-C to terminate...');
 });

@@ -30,3 +30,4 @@ Timestamp: Tue Jun 28 2022 13:33:53 GMT-0400 (Eastern Daylight Time)
 ::1 - - [11/Jul/2022:14:34:12 +0000] "GET /movies/Hancock HTTP/1.1" 200 1435 "-" "PostmanRuntime/7.29.0"
 ::1 - - [11/Jul/2022:14:39:24 +0000] "GET /genre/Drama HTTP/1.1" 200 167 "-" "PostmanRuntime/7.29.0"
 ::1 - - [11/Jul/2022:14:43:00 +0000] "GET /director/Doug%20Moench HTTP/1.1" 200 1435 "-" "PostmanRuntime/7.29.0"
+::1 - - [11/Jul/2022:14:58:20 +0000] "POST /users HTTP/1.1" 201 129 "-" "PostmanRuntime/7.29.0"
