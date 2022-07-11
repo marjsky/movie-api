@@ -14,7 +14,10 @@ const Movies = Models.Movie;
 const Users = Models.User;
 
 // allow Mongoose to connect database to perform CRUD operations
-mongoose.connect('mongodb://localhost:27017/daflix', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost:27017/test', { 
+  useNewUrlParser: true, 
+  useUnifiedTopology: true 
+});
 
 
 app.use(bodyParser.json()); //Returns middleware parses json looks at requests the Content-Type header matches the type option.
@@ -36,14 +39,33 @@ app.use((err, req, res, next) => {
   res.status(500).send("Error");
 })  
 
-
 // default text response when at /
 app.get("/", (req, res) => {
   res.send("Welcome to DaFlix!");
 });
 
+//#1 return JSON object when at /movie 
+app.get("/movies", (req, res) => {
+  Movies.find()
+  .then((movies) => {
+    res.status(201).json(movies);
+  })
+  .catch((err) => {
+    console.error(err);
+    res.status.apply(500).send("Error: " + err);
+  });
+});
 
-
+app.get("/users", function (req, res) {
+  Users.find()
+  .then((users) => {
+      res.status(201).json(users);
+  })
+  .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+  });
+});
 
 
 app.listen(8080, () => {
