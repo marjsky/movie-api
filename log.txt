@@ -34,3 +34,4 @@ Timestamp: Tue Jun 28 2022 13:33:53 GMT-0400 (Eastern Daylight Time)
 ::1 - - [11/Jul/2022:15:09:50 +0000] "PUT /users/Joshua%20Smith HTTP/1.1" 200 145 "-" "PostmanRuntime/7.29.0"
 ::1 - - [11/Jul/2022:15:33:49 +0000] "POST /users/Joshua%20Smith/movies/62cb7e84af40aa2f368b5d5f HTTP/1.1" 200 171 "-" "PostmanRuntime/7.29.0"
 ::1 - - [11/Jul/2022:16:03:25 +0000] "DELETE /users/Joshua%20Smith/movies/62cb7e84af40aa2f368b5d5f HTTP/1.1" 200 145 "-" "PostmanRuntime/7.29.0"
+::1 - - [11/Jul/2022:16:05:49 +0000] "DELETE /users/Joshua%20Smith HTTP/1.1" 200 25 "-" "PostmanRuntime/7.29.0"
