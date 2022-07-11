@@ -182,6 +182,23 @@ app.post("/users/:Username/movies/:MovieID", (req, res) => {
   );
 });
 
+// Allow users to remove a movie from their list of favorites #8
+app.delete("/users/:Username/movies/:MovieID", (req, res) => {
+  Users.findOneAndUpdate(
+      {Username: req.params.Username },
+      {$pull: { FavoriteMovies: req.params.MovieID}},
+      {new: true},
+      (error, updatedUser) => {
+          if(error) {
+              console.error(error);
+              res.status(500).send("Error: " + error);
+          } else {
+              res.json(updatedUser);
+          }
+      }
+  );
+});
+
 app.listen(8080, () => {
   console.log('Server started on port 8080; press Ctrl-C to terminate...');
 });
