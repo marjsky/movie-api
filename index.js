@@ -91,6 +91,18 @@ app.get("/genre/:Name", (req, res) => {
   });
 });
 
+//get info on director when looking for specific director #4
+app.get("/director/:Name", (req, res) => {
+  Movies.findOne({Name: req.params.Name})
+  .then((director) => {
+      res.json(director);
+  })
+  .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+  });
+});
+
 app.listen(8080, () => {
   console.log('Server started on port 8080; press Ctrl-C to terminate...');
 });
