@@ -79,6 +79,18 @@ app.get("/movies/:Title", (req, res) =>{
   });
 });
 
+//GET JSON genre into when looking for specific genre #3
+app.get("/genre/:Name", (req, res) => {
+  Movies.findOne({Name: req.params.Name})
+  .then((genre) => {
+      res.json(genre.Description);
+  })
+  .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+  });
+});
+
 app.listen(8080, () => {
   console.log('Server started on port 8080; press Ctrl-C to terminate...');
 });
