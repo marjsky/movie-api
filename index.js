@@ -24,6 +24,14 @@ app.use(bodyParser.json()); //Returns middleware parses json looks at requests t
 
 app.use(bodyParser.urlencoded({ extended: true })); // Returns middleware parses urlencoded bodies 
 
+// import auth.js into this file
+app.use(bodyParser.urlencoded({ extended: true }));
+let auth = require('./auth.js')(app);
+
+// import passport.js and rquire passport module into this file
+const passport = require('passport');
+require('./passport.js');
+
 // access documentation.html using express.static
 app.use("/documentation", express.static("public"));
 
