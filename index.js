@@ -192,6 +192,7 @@ app.put("/users/:Username",
     check('Password', 'Password is required').not().isEmpty(),
     check('Email', 'Email does not appear to be valid').isEmail()
   ],
+  passport.authenticate('jwt', { session: false }),
   (req, res) => {
     // check the validation object for errors
     let errors = validationResult(req);
@@ -224,7 +225,7 @@ app.put("/users/:Username",
   });
 
 //Allow users to add a movie to their list of favorites #7
-app.post("/users/:Username/movies/:MovieID", (req, res) => {
+app.post("/users/:Username/movies/:MovieID", passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.findOneAndUpdate(
       {Username: req.params.Username},
       {$push: { FavoriteMovies: req.params.MovieID }},
