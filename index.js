@@ -70,6 +70,7 @@ app.get("/", (req, res) => {
 });
 
 // GET JSON object of all movies list #1
+// remove passport temporarily
 app.get("/movies",/* passport.authenticate('jwt', { session: false }),*/ (req, res) => {
   Movies.find()
   .then((movies) => {
