@@ -93,6 +93,17 @@ app.get("/users", passport.authenticate('jwt', { session: false }), function (re
   });
 });
 
+app.get("/users/:Username", passport.authenticate('jwt', { session: false }), function (req, res) {
+  Users.find()
+  .then((users) => {
+      res.status(201).json(users);
+  })
+  .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error: " + err);
+  });
+});
+
 //GET JSON movie into when looking for specific title #2
 app.get("/movies/:Title", passport.authenticate('jwt', { session: false }), (req, res) =>{
   Movies.findOne({Title: req.params.Title})
