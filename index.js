@@ -170,7 +170,7 @@ app.post('/users',
       .then((user) => {
         if (user) {
           //If the user is found, send a response that it already exists
-            return res.status(400).send(req.body.Usernmae + 'already exits');
+            return res.status(400).send(req.body.Username + 'already exits');
         } else {
             Users
               .create({
@@ -221,7 +221,7 @@ app.put("/users/:Username",
                 Username: req.body.Username,
                 Password: hashedPassword,
                 Email: req.body.Email,
-                Birth: req.body.Birth,
+                Birthday: req.body.Birthday,
             },
         },
         {new: true}, // This line maks sure that the update document is right
