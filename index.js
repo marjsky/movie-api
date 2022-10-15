@@ -22,7 +22,8 @@ mongoose.connect(process.env.CONNECTION_URI, {
 });
 
 //Cross-Orign Resource Sharing control domans have access to API server
-const cors = require('cors');
+
+// const cors = require('cors');
 
 // let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234'];
 
@@ -37,7 +38,14 @@ const cors = require('cors');
 //   }
 // }));
 
-app.use(cors());
+// app.use(cors());
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 
 app.use(bodyParser.json()); //Returns middleware parses json looks at requests the Content-Type header matches the type option.
 
