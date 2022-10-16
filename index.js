@@ -24,7 +24,7 @@ mongoose.connect(process.env.CONNECTION_URI, {
 //Cross-Orign Resource Sharing control domans have access to API server
 const cors = require('cors');
 app.use(cors());
-let allowedOrigins = ["http://localhost:1234", "http://localhost:8080", "*"];
+let allowedOrigins = ["http://localhost:1234", "http://localhost:8080", "http://localhost:4200"];
 
 app.use(
   cors({
