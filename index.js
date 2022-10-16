@@ -22,29 +22,24 @@ mongoose.connect(process.env.CONNECTION_URI, {
 });
 
 //Cross-Orign Resource Sharing control domans have access to API server
+const cors = require('cors');
+app.use(cors());
+let allowedOrigins = ["http://localhost:1234", "http://localhost:8080", "*"];
 
-// const cors = require('cors');
-
-// let allowedOrigins = ['http://localhost:8080', 'http://localhost:1234'];
-
-// app.use(cors({
-//   origin: (origin, callback) => {
-//     if(!origin) return callback(null, true);
-//     if(allowedOrigins.indexOf(origin) === -1){ // If a specific origin isn't found on the list of allowed origins
-//       let message = 'The CORS policy for this application does not allow access from origin ' + origin;
-//       return callback(new Error(message), false);
-//     }
-//     return callback(null, true);
-//   }
-// }));
-
-// app.use(cors());
-
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.indexOf(origin) === -1) { // If a specific origin isn't found on the list of allowed origins
+        let message =
+          "The CORS policy for this application doesn't allow access from origin " +
+          origin;
+        return callback(new Error(message), false);
+      }
+      return callback(null, true);
+    },
+  })
+);
 
 
 app.use(bodyParser.json()); //Returns middleware parses json looks at requests the Content-Type header matches the type option.
