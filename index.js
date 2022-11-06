@@ -24,7 +24,13 @@ mongoose.connect(process.env.CONNECTION_URI, {
 //Cross-Orign Resource Sharing control domans have access to API server
 const cors = require('cors');
 app.use(cors());
-let allowedOrigins = ["http://localhost:1234", "https://marjsky.github.io", "http://localhost:8080", "http://localhost:4200"];
+let allowedOrigins = [
+  "http://localhost:1234",
+  "https://marjsky.github.io",
+  "http://localhost:8080",
+  "http://localhost:4200", 
+  "https://marjsky-myflix.netlify.app"
+];
 
 app.use(
   cors({
