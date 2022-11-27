@@ -90,7 +90,7 @@ app.get("/", (req, res) => {
 app.get("/movies", passport.authenticate('jwt', { session: false }) , (req, res) => {
   Movies.find()
   .then((movies) => {
-    res.status(201).json(movies);
+    res.status(200).json(movies);
   })
   .catch((err) => {
     console.error(err);
@@ -102,7 +102,7 @@ app.get("/movies", passport.authenticate('jwt', { session: false }) , (req, res)
 app.get("/users", passport.authenticate('jwt', { session: false }), function (req, res) {
   Users.find()
   .then((users) => {
-      res.status(201).json(users);
+      res.json(users);
   })
   .catch((err) => {
       console.error(err);
@@ -120,7 +120,7 @@ app.get("/users", passport.authenticate('jwt', { session: false }), function (re
 app.get("/users/:Username", passport.authenticate('jwt', { session: false }), function (req, res) {
   Users.findOne({Username: req.params.Username})
   .then((user) => {
-      res.status(201).json(user);
+      res.json(user);
   })
   .catch((err) => {
       console.error(err);
