@@ -80,6 +80,14 @@ app.get("/", (req, res) => {
   res.send("Welcome to DaFlix!");
 });
 
+/**
+ * GET: returns documentation file
+ * @returns documentation file
+ */
+app.get('/documentation', (req, res) => {
+  res.sendFile('public/documentation',{root: __dirname});
+});
+
 // remove passport temporarily
 /**
  * Returns list of all movies from database
