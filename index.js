@@ -85,7 +85,7 @@ app.get("/", (req, res) => {
  * @returns documentation file
  */
 app.get('/documentation', (req, res) => {
-  res.sendFile('public/documentation',{root: __dirname});
+  res.sendFile('public/documentation.html',{root: __dirname});
 });
 
 // remove passport temporarily
